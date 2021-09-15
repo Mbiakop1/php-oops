@@ -11,7 +11,7 @@ class Register {
 
    public function registerUsers($email, $message){
       $sql = "INSERT INTO users (name, message)
-  VALUES (:e,:m)";
+  VALUES (:e,:m)"; 
   $put = $this->conn->prepare($sql);  //prepare statement for execution
   $put->execute(array(":e"=>$email, ":m"=>$message));
 

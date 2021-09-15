@@ -5,21 +5,21 @@ class Calculator{
     public $b;
     public $results;
 
-    public function setA($a){
-      $this->a = $a;
-    }
+
+    
     public function getA(){
      return $this->a;
     }
 
-    
-    public function setB($b){
+    function __construct($a = 0, $b = 0)
+    {
+      $this->a = $a;
       $this->b = $b;
 
     }
+
     public function getB(){
      return $this->b;
-
     }
 
     public function saveResults(){
@@ -38,10 +38,10 @@ class Calculator{
 }
 
 
-$sum = new Calculator();
-$sum->setA(10);
+$sum = new Calculator(20, 50);
+
 echo "A = " . $sum->getA() . "<br>";
-$sum->setB(90);
+
 echo "B = " . $sum->getB() . "<br>";
 
 $sum->getResults();

@@ -1,5 +1,5 @@
 <?php
-require_once "classes/Register.php";
+require_once "classes/Database.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +21,22 @@ require_once "classes/Register.php";
 
 
 <?php  
-if(isset($_POST['submit'])){
- $email = $_POST['email'];
-$message = $_POST['message'];
-$test = new Register();
-$test->registerUsers($email, $message);
-}
+
+$db = new Database();
+$db->query("INSERT INTO opptable VALUES('', 'mbiakop clinton')");
+$db->execute();
+
+$db->query("SELECT * FROM opptable");
+
+echo $db->rowCount();
+
+
 
 ?>
 
 <!-- get the current page url -->
 <?php
+
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')  {
       $url = "https://";   
   }else {
@@ -77,6 +82,7 @@ echo $url;
 
         <input type="submit" class="btn btn-success" name="submit">
     </form>
+
 
 
 </body>

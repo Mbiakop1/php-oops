@@ -4,13 +4,11 @@ use Calculator as GlobalCalculator;
 
 class Calculator{
     static public $result;
-    static function add($a, $b) : int{
-        $result = $a +$b;
-        return $result;
+    static function add($a, $b){
+        self::$result = $a +$b;
     }
 }
-
-Calculator::$result = Calculator::add(2, 4);
+Calculator::add(80, 4);
 
 echo Calculator::$result . PHP_EOL;
 

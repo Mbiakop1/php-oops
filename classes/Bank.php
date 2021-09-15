@@ -3,7 +3,7 @@
 class Bank{
     public $accno;
     public $name;
-    public $balance;
+    public $balance = 0;
 
     public function depositAmount($amt) {
         $this->balance += $amt;
@@ -28,7 +28,7 @@ class Bank{
 $userAcc1 = new Bank();
 $userAcc1->accno = 111;
 $userAcc1->name = "mbiakop";
-$userAcc1->balance =4000000;
+$userAcc1->balance = 4000000;
 
 echo  "checking the balance " . PHP_EOL;
 $userAcc1->checkBalance();
