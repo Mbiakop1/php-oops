@@ -1,5 +1,5 @@
 <?php
-require_once "classes/Database.php";
+require_once "classes/Post.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,20 +20,6 @@ require_once "classes/Database.php";
 </head>
 
 
-<?php  
-
-$db = new Database();
-$db->query("INSERT INTO opptable VALUES('', 'mbiakop clinton')");
-$db->execute();
-
-$db->query("SELECT * FROM opptable");
-
-echo $db->rowCount();
-
-
-
-?>
-
 <!-- get the current page url -->
 <?php
 
@@ -44,7 +30,7 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')  {
  } 
  $url.= $_SERVER['HTTP_HOST'];
 $url.= $_SERVER['REQUEST_URI'];
-echo $url;
+// echo $url;
 
 ?>
 
